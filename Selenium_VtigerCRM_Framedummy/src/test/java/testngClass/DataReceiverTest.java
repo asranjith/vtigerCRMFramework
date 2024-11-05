@@ -26,6 +26,7 @@ public class DataReceiverTest {
     	 String pricetext = priceelement.getText();
     	 System.out.println(pricetext);
     	 driver.quit();
+    	 System.out.println("changes");
      }
      
       
