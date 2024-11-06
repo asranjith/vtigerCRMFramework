@@ -9,8 +9,13 @@ public class ContactsPage {
     public ContactsPage(WebDriver driver) {
     	PageFactory.initElements(driver, this);
     }
+    @FindBy(xpath = "//td[@class='tabSelected']")
+    private WebElement homebutton;
     
-    @FindBy(name = "search_text")
+    public WebElement getHomebutton() {
+		return homebutton;
+	}
+	@FindBy(name = "search_text")
     private WebElement searchForTextField;
     
     @FindBy(xpath = "//div[@id='basicsearchcolumns_real']/select")
