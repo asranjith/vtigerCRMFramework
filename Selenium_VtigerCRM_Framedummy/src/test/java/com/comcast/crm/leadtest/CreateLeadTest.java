@@ -49,7 +49,7 @@ public class CreateLeadTest extends BaseClass {
 		String lastNametext = leadInformationPage.getLastNameinfo().getText();
 		boolean lastnameStatus = lastNametext.contains(lastName);
 		Assert.assertTrue(lastnameStatus);
-		Assert.fail();
+		//Assert.fail();
 		String companytext = leadInformationPage.getCompanyinfo().getText();
 		boolean companyStatus = companytext.contains(company);
 		Assert.assertTrue(companyStatus);
