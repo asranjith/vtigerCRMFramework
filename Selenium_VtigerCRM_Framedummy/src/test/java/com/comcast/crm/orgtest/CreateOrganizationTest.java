@@ -17,7 +17,7 @@ import com.comcast.crm.objectRepository.utility.OrganizationsPage;
 @Listeners(com.comcast.crm.listenerUtility.ListenerImpClass.class)
 public class CreateOrganizationTest extends BaseClass {
 	SoftAssert obj=new SoftAssert();
-	@Test(retryAnalyzer = com.comcast.crm.listenerUtility.RetryListenerImpClass.class)
+	@Test(groups = "smokeTest", retryAnalyzer = com.comcast.crm.listenerUtility.RetryListenerImpClass.class)
 	public void createOrganizationTest() throws IOException {
 
 		String organisationName = eutils.readDataFromExcel("org", 1, 2);
@@ -37,7 +37,7 @@ public class CreateOrganizationTest extends BaseClass {
 
 	}
 	
-	@Test(retryAnalyzer = com.comcast.crm.listenerUtility.RetryListenerImpClass.class)
+	@Test(groups = "regressionTest",retryAnalyzer = com.comcast.crm.listenerUtility.RetryListenerImpClass.class)
 	public void createOrganisationWithPhoneNumberTest() throws EncryptedDocumentException, IOException {
 		String organisationName = eutils.readDataFromExcel("org", 7, 2);
 	    String phoneNumber = eutils.readDataFromExcel("org", 7, 3);
@@ -60,7 +60,7 @@ public class CreateOrganizationTest extends BaseClass {
 		obj.assertAll();
 	}
 	
-	@Test
+	@Test(groups = "regressionTest",retryAnalyzer = com.comcast.crm.listenerUtility.RetryListenerImpClass.class)
 	public void createOrganisationWithIndustriesTest() throws EncryptedDocumentException, IOException {
 		String organisationName = eutils.readDataFromExcel("org", 4, 2);
 		String industry = eutils.readDataFromExcel("org", 4, 3);
@@ -83,7 +83,7 @@ public class CreateOrganizationTest extends BaseClass {
 		obj.assertTrue(typeStatus);
         obj.assertAll();
 	}
-	@Test(retryAnalyzer = com.comcast.crm.listenerUtility.RetryListenerImpClass.class)
+	@Test(groups = "regressionTest",retryAnalyzer = com.comcast.crm.listenerUtility.RetryListenerImpClass.class)
 	public void createOrganisationAndDelete() throws EncryptedDocumentException, IOException {
 		String organisationName = eutils.readDataFromExcel("org", 1, 2);		
 		Random random = new Random();

@@ -15,7 +15,7 @@ import com.comcast.crm.objectRepository.utility.ProductsPage;
 @Listeners(com.comcast.crm.listenerUtility.ListenerImpClass.class)
 public class CreatingProductTest extends BaseClass{
 	
-	@Test(retryAnalyzer = com.comcast.crm.listenerUtility.RetryListenerImpClass.class)
+	@Test(groups = "smokeTest",retryAnalyzer = com.comcast.crm.listenerUtility.RetryListenerImpClass.class)
    public void creatingProductTest()throws IOException {
 	  
 		String productName = eutils.readDataFromExcel("product", 1, 4);
@@ -35,7 +35,7 @@ public class CreatingProductTest extends BaseClass{
 		productInformationPage.verify(producttext, productname);
 		
      }
-	@Test(retryAnalyzer = com.comcast.crm.listenerUtility.RetryListenerImpClass.class)
+	@Test(groups = "regressionTest",retryAnalyzer = com.comcast.crm.listenerUtility.RetryListenerImpClass.class)
 	public void creatingProductWithCategoryTest() throws EncryptedDocumentException, IOException {
 		String productName = eutils.readDataFromExcel("product", 1, 4);
 		String productType = eutils.readDataFromExcel("product", 1, 5);
